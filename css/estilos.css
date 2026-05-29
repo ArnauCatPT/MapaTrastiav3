@@ -1,0 +1,345 @@
+ /* @charset "utf-8"; 
+
+*/ 
+
+
+
+  
+
+*,
+*::after,
+*::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --color-cuerpo: #f5f5f5;
+    --color-cabecera:  #ff9900;
+    --color-fnd-but: black;
+    --color-txt-but: white;
+}
+
+header,
+.barra-busqueda{
+    display: flex;
+}
+
+body{
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--color-cuerpo);
+}
+
+header, footer{
+    background: var(--color-cabecera);
+    padding: 15px;
+    justify-content: center;
+}
+
+.barra-busqueda {
+      gap: 10px;
+      width: 100%;
+      max-width: 600px;
+}
+
+
+input,
+button{
+    border: none;
+    border-radius: 20px;    
+}
+
+input{
+    flex: 1;
+    padding: 10px;
+}
+
+button{
+    padding: 10px 15px;
+    cursor: pointer;
+    background: var(--color-fnd-but);
+    color: var(--color-txt-but)
+}
+
+main{
+    padding: 20px;
+}
+
+main .card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+#mainMap {
+  display: none;
+  height: 100vh;
+}
+
+#mainCards {
+  display: block;
+}
+
+.map-container {
+  height: 100%;
+  width: 100%;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: row; 
+  height: 100vh;       
+  gap: 16px;
+}
+
+.cards-container {
+  width: 300px;        
+  overflow-y: auto;    
+  padding: 16px;
+  background: #f5f5f5;
+}
+
+.map-container {
+  flex: 1;             
+}
+
+ .contenedor-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  border-radius: 2px solid red;
+  gap: 20px; 
+  padding: 20px;
+}
+
+.tarjeta {
+  display: flex;
+
+  padding: 1.5rem;
+  margin-bottom: 10px;
+
+  flex-direction: column;
+  background: var(--color-txt-but);
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.tarjeta:hover {
+  transform: translateY(-5px);
+}
+
+.tarjeta-footer {
+  padding: 1rem 1.5rem;
+  background: #f9f9f9;
+  border-top: 1px solid #eee;
+}
+
+a{
+  color: var(--color-fnd-but);
+  text-decoration: none;
+  text-align: center;
+}
+
+
+.tarjeta h2 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.tarjeta span {
+  font-size: .85rem;
+  color: #666;
+}
+
+
+#mapContainer{
+    width: 100%;
+    height: 80vh;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+@media (max-width: 480px){
+
+  header,
+  footer{
+    padding: 10px;
+  }
+
+  .barra-busqueda{
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  input,
+  button{
+    width: 100%;
+    border-radius: 12px;
+  }
+
+  input{
+    padding: 12px;
+  }
+
+  button{
+    padding: 12px;
+    font-size: .9rem;
+  }
+
+  main{
+    padding: 10px;
+  }
+
+  #mapContainer{
+    height: 40vh;
+    border-radius: 8px;
+  }
+
+  .contenedor-grid{
+    grid-template-columns: 1fr;
+    gap: 12px;
+    padding: 5px;
+  }
+
+  .tarjeta{
+    padding: .8rem;
+    border-radius: 10px;
+  }
+
+  .tarjeta-cuerpo{
+    padding: .8rem;
+    gap: 6px;
+  }
+
+  .tarjeta-footer{
+    padding: .7rem .8rem;
+  }
+
+  h2{
+    font-size: .9rem;
+  }
+
+  span{
+    font-size: .75rem;
+  }
+
+}
+
+
+@media (max-width: 768px){
+
+  header,
+  footer{
+    padding: 12px;
+  }
+
+  .barra-busqueda{
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch; 
+    gap: 10px;
+  }
+
+  input,
+  button{
+    border: none;
+    border-radius: 20px;
+  }
+
+  main{
+    padding: 15px;
+  }
+
+  #mapContainer{
+    height: 50vh;
+  }
+
+  .contenedor-grid{
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 15px;
+    padding: 10px;
+  }
+
+  .tarjeta{
+    padding: 1rem;
+  }
+
+  .tarjeta-cuerpo{
+    padding: 1rem;
+    gap: 8px;
+  }
+
+  .tarjeta-footer{
+    padding: .8rem 1rem;
+  }
+
+  h2{
+    font-size: .95rem;
+  }
+
+  span{
+    font-size: .8rem;
+  }
+
+}
+
+ 
+@media (max-width: 1024px){
+
+  header{
+    padding: 10px;
+  }
+
+  .barra-busqueda{
+    max-width: 100%;
+    gap: 8px;
+  }
+
+  input{
+    width: 100%;
+  }
+
+  button{
+    padding: 10px 12px;
+  }
+
+  main{
+    padding: 15px;
+  }
+
+  #mapContainer{
+    height: 60vh;
+  }
+
+  .contenedor-grid{
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+    padding: 10px;
+  }
+
+  .tarjeta{
+    padding: 1rem;
+  }
+
+  .tarjeta-cuerpo{
+    padding: 1rem;
+  }
+
+  .tarjeta-footer{
+    padding: .8rem 1rem;
+  }
+
+  h2{
+    font-size: .95rem;
+  }
+
+  span{
+    font-size: .8rem;
+  }
+
+}
